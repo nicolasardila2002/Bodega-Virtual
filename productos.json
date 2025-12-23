@@ -40,7 +40,7 @@
         "name": "Aguardiente amarillo + 5 cervezas andina + botella de agua + paquete yupis ",
         "description": "El combo mas fiel a tus reuniones: Aguardiente amarillo, 5 cervezas andina, botella de agua y paquete yupis.",
         "price": 120000,
-        "image": "/productos/combo5.jpeg",
+        "image": "./productos/combo5.jpeg",
         "stock": 15,
         "category": "combo"
     },
