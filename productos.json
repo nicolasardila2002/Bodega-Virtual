@@ -4,7 +4,7 @@
         "name": "Aguardiente Amarillo Manzanares 750ml + 2 andina + 1 Poker + 1 Coronita",
         "description": "Aguardiente amarillo con combo de cervezas !Aprovecha esta oferta especial para tus reuniones!",
         "price": 48950,
-        "image": "./productos/combo5.jpeg",
+        "image": "./productos/combo1.jpeg",
         "stock": 47,
         "category": "combo"
     },
@@ -13,7 +13,7 @@
         "name": "Aguardiente Amarillo + 2 Electrolit",
         "description": "Que no falte tu aguardiente amarillo en tus celebraciones y lleva dos electroli para el dia siguiente.",
         "price": 55000,
-        "image": "./productos/combo5.jpeg",
+        "image": "./productos/combo2.jpeg",
         "stock": 32,
         "category": "combo"
     },
@@ -22,7 +22,7 @@
         "name": "Aguardiente Amarillo + Six pack aguila + caja de Trident",
         "description": "Los infaltables para tus reuniones: Aguardiente amarillo, six pack de cerveza aguila y caja de chicles Trident.",
         "price": 125000,
-        "image": "./productos/combo5.jpeg",
+        "image": "./productos/combo3.jpeg",
         "stock": 18,
         "category": "combo"
     },
@@ -31,7 +31,7 @@
         "name": "Aguardiente Amarillo + six pack andina + paquete familiar DeTodito",
         "description": "Que no se te olvide en tus reuniones el combo de aguardiente amarillo, six pack andina y paquete familiar DeTodito.",
         "price": 42000,
-        "image": "./productos/combo5.jpeg",
+        "image": "./productos/combo4.jpeg",
         "stock": 56,
         "category": "combo"
     },
