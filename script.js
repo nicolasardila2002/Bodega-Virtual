@@ -242,6 +242,26 @@ function updateCart() {
                 </div>
             `;
             
+            // Asignar event listeners directamente a los botones
+            const decreaseBtn = cartItem.querySelector('.decrease');
+            const increaseBtn = cartItem.querySelector('.increase');
+            const removeBtn = cartItem.querySelector('.remove-item');
+            
+            decreaseBtn.addEventListener('click', function() {
+                console.log('Disminuyendo cantidad producto:', item.id);
+                updateQuantity(item.id, false);
+            });
+            
+            increaseBtn.addEventListener('click', function() {
+                console.log('Aumentando cantidad producto:', item.id);
+                updateQuantity(item.id, true);
+            });
+            
+            removeBtn.addEventListener('click', function() {
+                console.log('Eliminando producto del carrito:', item.id);
+                removeFromCart(item.id);
+            });
+            
             cartItemsContainer.appendChild(cartItem);
         });
         
@@ -462,15 +482,82 @@ function showNotification(message) {
     }, 3000);
 }
 
-// Inicializar eventos
-function initEventListeners() {
-    console.log('Inicializando eventos del carrito...');
+// Inicializar eventos inmediatamente
+document.addEventListener('click', function(e) {
+    console.log('Clic detectado en:', e.target.className, e.target.tagName);
     
-    // 1. ICONO DEL CARRITO - ¡VERSIÓN CORREGIDA!
+    // Agregar al carrito
+    if (e.target.classList.contains('add-to-cart')) {
+        const productId = parseInt(e.target.getAttribute('data-id'));
+        console.log('Agregando al carrito producto:', productId);
+        addToCart(productId);
+    }
+    
+    // Ver detalles del producto
+    if (e.target.classList.contains('view-details')) {
+        const productId = parseInt(e.target.getAttribute('data-id'));
+        console.log('Viendo detalles producto:', productId);
+        openProductModal(productId);
+    }
+    
+    // Comprar ahora
+    if (e.target.classList.contains('buy-now')) {
+        const productId = parseInt(e.target.getAttribute('data-id'));
+        console.log('Comprando ahora producto:', productId);
+        addToCart(productId);
+        setTimeout(openCart, 300);
+    }
+    
+    // Eliminar item
+    const removeBtn = e.target.closest('.remove-item');
+    if (removeBtn) {
+        const productId = parseInt(removeBtn.getAttribute('data-id'));
+        console.log('Eliminando producto del carrito:', productId);
+        removeFromCart(productId);
+    }
+    
+    // Cambiar cantidad
+    const decreaseBtn = e.target.closest('.decrease');
+    if (decreaseBtn) {
+        const productId = parseInt(decreaseBtn.parentElement.getAttribute('data-id'));
+        console.log('Disminuyendo cantidad producto:', productId);
+        updateQuantity(productId, false);
+    }
+    
+    const increaseBtn = e.target.closest('.increase');
+    if (increaseBtn) {
+        const productId = parseInt(increaseBtn.parentElement.getAttribute('data-id'));
+        console.log('Aumentando cantidad producto:', productId);
+        updateQuantity(productId, true);
+    }
+    
+    // Botones del modal
+    if (e.target.id === 'modal-add-to-cart' || e.target.closest('#modal-add-to-cart')) {
+        if (currentProductId) {
+            addToCart(currentProductId);
+            closeProductModal();
+            showNotification('✅ Producto agregado al carrito');
+        }
+    }
+    
+    if (e.target.id === 'modal-buy-now' || e.target.closest('#modal-buy-now')) {
+        if (currentProductId) {
+            addToCart(currentProductId);
+            closeProductModal();
+            setTimeout(openCart, 300);
+            showNotification('✅ Producto agregado al carrito');
+        }
+    }
+});
+
+// Inicializar eventos específicos
+function initEventListeners() {
+    console.log('Inicializando eventos específicos...');
+    
+    // 1. ICONO DEL CARRITO
     if (cartIcon) {
         console.log('Icono del carrito encontrado');
         
-        // MÚLTIPLES maneras de asegurar que funcione
         cartIcon.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -478,7 +565,6 @@ function initEventListeners() {
             openCart();
         });
         
-        // También asignar onclick directo
         cartIcon.onclick = function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -486,7 +572,6 @@ function initEventListeners() {
             return false;
         };
         
-        // Asegurar que sea clickeable
         cartIcon.style.cursor = 'pointer';
         cartIcon.style.pointerEvents = 'auto';
         cartIcon.style.position = 'relative';
@@ -560,76 +645,17 @@ function initEventListeners() {
         });
     });
     
-    // 8. EVENT DELEGATION PARA PRODUCTOS
-    document.addEventListener('click', function(e) {
-        // Agregar al carrito
-        if (e.target.classList.contains('add-to-cart')) {
-            const productId = parseInt(e.target.getAttribute('data-id'));
-            addToCart(productId);
-        }
-        
-        // Ver detalles del producto
-        if (e.target.classList.contains('view-details')) {
-            const productId = parseInt(e.target.getAttribute('data-id'));
-            openProductModal(productId);
-        }
-        
-        // Comprar ahora
-        if (e.target.classList.contains('buy-now')) {
-            const productId = parseInt(e.target.getAttribute('data-id'));
-            addToCart(productId);
-            setTimeout(openCart, 300);
-        }
-        
-        // Eliminar item
-        const removeBtn = e.target.closest('.remove-item');
-        if (removeBtn) {
-            const productId = parseInt(removeBtn.getAttribute('data-id'));
-            removeFromCart(productId);
-        }
-        
-        // Cambiar cantidad
-        if (e.target.classList.contains('decrease')) {
-            const productId = parseInt(e.target.parentElement.getAttribute('data-id'));
-            updateQuantity(productId, false);
-        }
-        
-        if (e.target.classList.contains('increase')) {
-            const productId = parseInt(e.target.parentElement.getAttribute('data-id'));
-            updateQuantity(productId, true);
-        }
-    });
-    
-    // 9. EVENT DELEGATION PARA BOTONES DEL MODAL
-    document.addEventListener('click', function(e) {
-        // Agregar al carrito desde el modal
-        if (e.target.id === 'modal-add-to-cart' || e.target.closest('#modal-add-to-cart')) {
-            if (currentProductId) {
-                addToCart(currentProductId);
-                closeProductModal();
-                showNotification('✅ Producto agregado al carrito');
-            }
-        }
-        
-        // Comprar ahora desde el modal
-        if (e.target.id === 'modal-buy-now' || e.target.closest('#modal-buy-now')) {
-            if (currentProductId) {
-                addToCart(currentProductId);
-                closeProductModal();
-                setTimeout(openCart, 300);
-                showNotification('✅ Producto agregado al carrito');
-            }
-        }
-    });
-    
-    // 10. TECLA ESC
+    // 8. TECLA ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeCart();
+            if (productModal && productModal.classList.contains('active')) {
+                closeProductModal();
+            }
         }
     });
     
-    // 11. PREVENIR CERRADO ACCIDENTAL
+    // 9. PREVENIR CERRADO ACCIDENTAL
     if (cartSidebar) {
         cartSidebar.addEventListener('click', function(e) {
             e.stopPropagation();
@@ -679,47 +705,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ==============================================
-// CÓDIGO DE EMERGENCIA - GARANTIZA QUE EL CARRITO FUNCIONE
+// CÓDIGO SIMPLIFICADO - SIN EMERGENCIA
 // ==============================================
 
 // Esto se ejecutará después de que todo cargue
 window.addEventListener('load', function() {
-    console.log('Cargando código de emergencia...');
-    
-    setTimeout(function() {
-        const cartIcon = document.querySelector('.cart-icon');
-        const cartSidebar = document.querySelector('.cart-sidebar');
-        const overlay = document.querySelector('.overlay');
-        
-        if (cartIcon && cartSidebar) {
-            console.log('Configurando carrito de emergencia');
-            
-            // Función ULTRA simple que siempre funcionará
-            function emergencyOpenCart() {
-                console.log('EMERGENCIA: Abriendo carrito');
-                cartSidebar.classList.add('active');
-                if (overlay) overlay.classList.add('active');
-                document.body.classList.add('cart-open');
-                return false;
-            }
-            
-            // Sobrescribir cualquier cosa anterior
-            cartIcon.onclick = emergencyOpenCart;
-            
-            // Añadir más listeners
-            cartIcon.addEventListener('click', emergencyOpenCart, true);
-            cartIcon.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                emergencyOpenCart();
-            }, true);
-            
-            // Estilos para asegurar click
-            cartIcon.style.cursor = 'pointer';
-            cartIcon.style.pointerEvents = 'auto';
-            cartIcon.style.zIndex = '9999';
-            
-            console.log('Carrito de emergencia listo');
-        }
-    }, 1500);
+    console.log('Página cargada completamente');
 });
