@@ -4,7 +4,7 @@
         "name": "Aguardiente Amarillo Manzanares 750ml + 2 andina + 1 Poker + 1 Coronita",
         "description": "Aguardiente amarillo con combo de cervezas !Aprovecha esta oferta especial para tus reuniones!",
         "price": 48950,
-        "image": "./productos/combo1.jpeg",
+        "image": "/productos/combo1.jpeg",
         "stock": 47,
         "category": "combo"
     },
@@ -13,7 +13,7 @@
         "name": "Aguardiente Amarillo + 2 Electrolit",
         "description": "Que no falte tu aguardiente amarillo en tus celebraciones y lleva dos electroli para el dia siguiente.",
         "price": 55000,
-        "image": "./productos/combo-2.png",
+        "image": "/productos/combo-2.png",
         "stock": 32,
         "category": "combo"
     },
