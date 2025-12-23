@@ -101,9 +101,9 @@ function createProductCard(product) {
             <p class="product-stock">Unidades: ${product.stock}</p>
             <p class="product-price">$${product.price.toLocaleString()}</p>
             <div class="product-actions">
-                <button class="view-details" data-id="${product.id}">Ver detalles</button>
-                <button class="add-to-cart" data-id="${product.id}">Agregar</button>
-                <button class="buy-now" data-id="${product.id}">Comprar</button>
+                <button type="button" class="view-details" data-id="${product.id}">Ver detalles</button>
+                <button type="button" class="add-to-cart" data-id="${product.id}">Agregar</button>
+                <button type="button" class="buy-now" data-id="${product.id}">Comprar</button>
             </div>
         </div>
     `;
@@ -232,10 +232,10 @@ function updateCart() {
                     <h4 class="cart-item-title">${item.name}</h4>
                     <p class="cart-item-price">$${item.price.toLocaleString()} c/u</p>
                     <div class="cart-item-quantity" data-id="${item.id}">
-                        <button class="quantity-btn decrease">-</button>
+                        <button type="button" class="quantity-btn decrease">-</button>
                         <span class="quantity">${item.quantity}</span>
-                        <button class="quantity-btn increase">+</button>
-                        <button class="remove-item" data-id="${item.id}">
+                        <button type="button" class="quantity-btn increase">+</button>
+                        <button type="button" class="remove-item" data-id="${item.id}">
                             <i class="fas fa-trash"></i>
                         </button>
                     </div>
