@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Aguardiente Amarillo Manzanares 750ml + 2 andina + 1 Poker + 1 Coronita",
+        "description": "Aguardiente amarillo con combo de cervezas !Aprovecha esta oferta especial para tus reuniones!",
+        "price": 48950,
+        "image": "/productos/combo1.jpeg",
+        "stock": 47,
+        "category": "combo"
+    },
+    {
+        "id": 2,
+        "name": "Aguardiente Amarillo + 2 Electrolit",
+        "description": "Que no falte tu aguardiente amarillo en tus celebraciones y lleva dos electroli para el dia siguiente.",
+        "price": 55000,
+        "image": "/productos/combo 2.jpeg",
+        "stock": 32,
+        "category": "individual"
+    },
+    {
+        "id": 3,
+        "name": "Whisky Buchanan's 12 años 750ml",
+        "description": "Whisky escocés premium con 12 años de añejamiento, notas de vainilla y roble.",
+        "price": 125000,
+        "image": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
+        "stock": 18,
+        "category": "individual"
+    },
+    {
+        "id": 4,
+        "name": "Vino Tinto Cabernet Sauvignon 750ml",
+        "description": "Vino tinto con cuerpo, taninos suaves y final prolongado. Ideal para carnes rojas.",
+        "price": 42000,
+        "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+        "stock": 56,
+        "category": "individual"
+    },
+    {
+        "id": 5,
+        "name": "Combo Fiesta Amigos",
+        "description": "Incluye Aguardiente, Ron, hielo y snacks para compartir con amigos. Perfecto para reuniones.",
+        "price": 120000,
+        "image": "https://images.unsplash.com/photo-1535958636474-b021ee887b13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+        "stock": 15,
+        "category": "combo"
+    },
+    {
+        "id": 6,
+        "name": "Combo Romántico",
+        "description": "Vino tinto premium, chocolates artesanales y velas aromáticas para una velada especial.",
+        "price": 85000,
+        "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+        "stock": 22,
+        "category": "combo"
+    },
+    {
+        "id": 7,
+        "name": "Combo Familiar",
+        "description": "Selección de bebidas para todos los gustos: aguardiente, ron, vino y cervezas.",
+        "price": 180000,
+        "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
+        "stock": 10,
+        "category": "combo"
+    },
+    {
+        "id": 8,
+        "name": "Combo Degustación Premium",
+        "description": "Variedad de licores premium para degustar y descubrir nuevos sabores.",
+        "price": 220000,
+        "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+        "stock": 8,
+        "category": "combo"
+    }
+]

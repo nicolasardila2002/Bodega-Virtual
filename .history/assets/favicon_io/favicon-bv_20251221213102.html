@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><body style="margin:0;background:hwb(72 7% 45%)">
+<canvas id="c" width="64" height="64"></canvas>
+<script>
+const c=document.getElementById('c'),ctx=c.getContext('2d');
+ctx.fillStyle='#8B4513';ctx.fillRect(0,0,64,64);
+ctx.fillStyle='white';ctx.font='bold 20px Arial';ctx.textAlign='center';
+ctx.fillText('B',32,30);ctx.fillText('V',32,50);
+c.toBlob(b=>{
+    const a=document.createElement('a');a.download='favicon-bv.png';
+    a.href=URL.createObjectURL(b);a.click();
+    alert('Favicon BV.png descargado. Ponlo en assets/ y usa: <link rel="icon" href="assets/favicon-bv.png">');
+});
+</script>
+</body></html>

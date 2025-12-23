@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodega Virtual - Licores Premium & Experiencias Únicas</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Fuentes elegantes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER ELEGANTE -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-texto">
+                    <h1>
+                        <span class="logo-bodega logo-brillo">BODEGA</span>
+                        <span class="logo-virtual">VIRTUAL</span>
+                    </h1>
+                    <p class="tagline">Licores Premium & Experiencias Únicas</p>
+                </div>
+            </div>
+            
+            <!-- Menú móvil -->
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Navegación -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="#productos"><i class="fas fa-wine-bottle"></i> Licores</a></li>
+                    <li><a href="#combos"><i class="fas fa-gift"></i> Combos</a></li>
+                    <li><a href="#contacto"><i class="fas fa-crown"></i> Club VIP</a></li>
+                    <li><a href="https://wa.me/573168493791" target="_blank" class="nav-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Pedir
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO IMPACTANTE -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h2>EL ARTE DEL <span>BUEN BEBER</span></h2>
+                <p class="hero-subtitle">Descubre nuestra exclusiva selección de licores premium, 
+                <br>donde cada botella cuenta una historia</p>
+                
+                <div class="hero-buttons">
+                    <a href="#productos" class="btn btn-hero">
+                        <i class="fas fa-eye"></i> Ver Colección
+                    </a>
+                    <a href="#combos" class="btn btn-hero btn-secondary">
+                        <i class="fas fa-star"></i> Combos Exclusivos
+                    </a>
+                </div>
+                
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Envío Express</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Garantía Premium</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-gift"></i>
+                        <span>Regalo Empacado</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-headset"></i>
+                        <span>Asesoría Expertos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Elementos decorativos -->
+        <div class="hero-deco deco-1"></div>
+        <div class="hero-deco deco-2"></div>
+        <div class="hero-deco deco-3"></div>
+    </section>
+
+    <!-- PRODUCTOS PREMIUM -->
+    <section class="productos-section" id="productos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">NUESTROS LICORES <span>PREMIUM</span></h2>
+                <p class="section-subtitle">Selección curada de las mejores marcas internacionales</p>
+                <div class="section-deco"></div>
+            </div>
+            
+            <div class="productos-grid">
+                <!-- PRODUCTO 1 - WHISKY -->
+                <div class="producto-card">
+                    <div class="producto-badge">TOP VENTAS</div>
+                    <div class="producto-img">
+                        <img src="productos/whisky.jpg" alt="Whisky Premium" class="img-producto">
+                        <div class="producto-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="producto-info">
+                        <div class="producto-categoria">WHISKY</div>
+                        <h3 class="producto-nombre">Johnnie Walker Blue Label</h3>
+                        <p class="producto-descripcion">
+                            Whisky escocés blend de lujo con notas de miel, 
+                            frutas secas y chocolate oscuro. Edición limitada.
+                        </p>
+                        
+                        <div class="producto-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.8)</span>
+                        </div>
+                        
+                        <div class="producto-precio">
+                            <span class="precio">$450.000</span>
+                            <span class="precio-unit">/ 750ml</span>
+                        </div>
+                        
+                        <div class="producto-actions">
+                            <button class="btn btn-producto" onclick="comprarProducto('Johnnie Walker Blue Label')">
+                                <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                            </button>
+                            <button class="btn-icon" title="Agregar a favoritos">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 2 - RON -->
+                <div class="producto-card">
+                    <div class="producto-badge">-15%</div>
+                    <div class="producto-img">
+                        <img src="productos/ron.jpg" alt="Ron Añejo" class="img-producto">
+                        <div class="producto-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="producto-info">
+                        <div class="producto-categoria">RON</div>
+                        <h3 class="producto-nombre">Zacapa XO</h3>
+                        <p class="producto-descripcion">
+                            Ron guatemalteco añejado 25 años en barricas de whisky, 
+                            con notas de cacao, café y frutas tropicales.
+                        </p>
+                        
+                        <div class="producto-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        
+                        <div class="producto-precio">
+                            <span class="precio-oferta">$380.000</span>
+                            <span class="precio">$320.000</span>
+                            <span class="precio-unit">/ 700ml</span>
+                        </div>
+                        
+                        <div class="producto-actions">
+                            <button class="btn btn-producto" onclick="comprarProducto('Zacapa XO')">
+                                <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                            </button>
+                            <button class="btn-icon" title="Agregar a favoritos">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 3 - TEQUILA -->
+                <div class="producto-card">
+                    <div class="producto-badge">NUEVO</div>
+                    <div class="producto-img">
+                        <img src="productos/tequila.jpg" alt="Tequila Reposado" class="img-producto">
+                        <div class="producto-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="producto-info">
+                        <div class="producto-categoria">TEQUILA</div>
+                        <h3 class="producto-nombre">Don Julio 1942</h3>
+                        <p class="producto-descripcion">
+                            Tequila añejo de ultra premium, añejado 2.5 años con 
+                            notas de caramelo, vainilla y roble tostado.
+                        </p>
+                        
+                        <div class="producto-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        
+                        <div class="producto-precio">
+                            <span class="precio">$280.000</span>
+                            <span class="precio-unit">/ 750ml</span>
+                        </div>
+                        
+                        <div class="producto-actions">
+                            <button class="btn btn-producto" onclick="comprarProducto('Don Julio 1942')">
+                                <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                            </button>
+                            <button class="btn-icon" title="Agregar a favoritos">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 4 - VODKA -->
+                <div class="producto-card">
+                    <div class="producto-img">
+                        <img src="productos/vodka.jpg" alt="Vodka Premium" class="img-producto">
+                        <div class="producto-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="producto-info">
+                        <div class="producto-categoria">VODKA</div>
+                        <h3 class="producto-nombre">Belvedere Lake Bartezek</h3>
+                        <p class="producto-descripcion">
+                            Vodka polaco de centeno, destilado 4 veces, 
+                            con perfil suave y notas de vainilla y almendra.
+                        </p>
+                        
+                        <div class="producto-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.7)</span>
+                        </div>
+                        
+                        <div class="producto-precio">
+                            <span class="precio">$220.000</span>
+                            <span class="precio-unit">/ 750ml</span>
+                        </div>
+                        
+                        <div class="producto-actions">
+                            <button class="btn btn-producto" onclick="comprarProducto('Belvedere Vodka')">
+                                <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                            </button>
+                            <button class="btn-icon" title="Agregar a favoritos">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 5 - GIN -->
+                <div class="producto-card">
+                    <div class="producto-badge">EDICIÓN LIMITADA</div>
+                    <div class="producto-img">
+                        <img src="productos/gin.jpg" alt="Gin Artesanal" class="img-producto">
+                        <div class="producto-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="producto-info">
+                        <div class="producto-categoria">GIN</div>
+                        <h3 class="producto-nombre">Hendrick's Lunar</h3>
+                        <p class="producto-descripcion">
+                            Gin escocés con infusión nocturna de flores, 
+                            cítricos y especias. Perfecto para cocktails sofisticados.
+                        </p>
+                        
+                        <div class="producto-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.3)</span>
+                        </div>
+                        
+                        <div class="producto-precio">
+                            <span class="precio">$190.000</span>
+                            <span class="precio-unit">/ 700ml</span>
+                        </div>
+                        
+                        <div class="producto-actions">
+                            <button class="btn btn-producto" onclick="comprarProducto('Hendricks Lunar')">
+                                <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                            </button>
+                            <button class="btn-icon" title="Agregar a favoritos">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-cta">
+                <a href="#combos" class="btn btn-cta">
+                    <i class="fas fa-gift"></i> VER TODOS LOS COMBOS ESPECIALES
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMBOS ESPECIALES -->
+    <section class="combos-section" id="combos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">COMBOS <span>EXCLUSIVOS</span></h2>
+                <p class="section-subtitle">Ahorra hasta 30% con nuestros paquetes especiales</p>
+                <div class="section-deco"></div>
+            </div>
+            
+            <div class="combos-grid">
+                <!-- COMBO 1 -->
+                <div class="combo-card combo-premium">
+                    <div class="combo-header">
+                        <span class="combo-badge">MÁS POPULAR</span>
+                        <div class="combo-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="combo-nombre">COMBO DEGUSTACIÓN</h3>
+                        <p class="combo-subtitle">Para Conocedores</p>
+                    </div>
+                    
+                    <div class="combo-img">
+                        <img src="productos/combo1.jpg" alt="Combo Degustación" class="img-combo">
+                    </div>
+                    
+                    <div class="combo-info">
+                        <ul class="combo-incluye">
+                            <li><i class="fas fa-check"></i> Whisky Johnnie Walker Black</li>
+                            <li><i class="fas fa-check"></i> Ron Zacapa 23</li>
+                            <li><i class="fas fa-check"></i> Tequila Don Julio Blanco</li>
+                            <li><i class="fas fa-check"></i> Set 4 copas de cristal</li>
+                            <li><i class="fas fa-check"></i> Guía de maridaje exclusiva</li>
+                        </ul>
+                        
+                        <div class="combo-precio">
+                            <div class="ahorro">
+                                <span class="ahorro-text">AHORRAS</span>
+                                <span class="ahorro-valor">$150.000</span>
+                            </div>
+                            <div class="precios">
+                                <span class="precio-antiguo">$950.000</span>
+                                <span class="precio-nuevo">$799.000</span>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-combo" onclick="comprarCombo('Combo Degustación')">
+                            <i class="fab fa-whatsapp"></i> SOLICITAR COMBO
+                        </button>
+                        
+                        <div class="combo-stock">
+                            <i class="fas fa-bolt"></i> Solo 5 disponibles
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMBO 2 -->
+                <div class="combo-card">
+                    <div class="combo-header">
+                        <span class="combo-badge">-25%</span>
+                        <div class="combo-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <h3 class="combo-nombre">COMBO CELEBRACIÓN</h3>
+                        <p class="combo-subtitle">Para Fiestas</p>
+                    </div>
+                    
+                    <div class="combo-img">
+                        <img src="productos/combo2.jpg" alt="Combo Celebración" class="img-combo">
+                    </div>
+                    
+                    <div class="combo-info">
+                        <ul class="combo-incluye">
+                            <li><i class="fas fa-check"></i> Vodka Absolut 1L</li>
+                            <li><i class="fas fa-check"></i> Ron Bacardi Superior</li>
+                            <li><i class="fas fa-check"></i> Gin Beefeater</li>
+                            <li><i class="fas fa-check"></i> Mixer de frutas tropicales</li>
+                            <li><i class="fas fa-check"></i> Kit cócteles premium</li>
+                        </ul>
+                        
+                        <div class="combo-precio">
+                            <div class="ahorro">
+                                <span class="ahorro-text">AHORRAS</span>
+                                <span class="ahorro-valor">$85.000</span>
+                            </div>
+                            <div class="precios">
+                                <span class="precio-antiguo">$340.000</span>
+                                <span class="precio-nuevo">$255.000</span>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-combo" onclick="comprarCombo('Combo Celebración')">
+                            <i class="fab fa-whatsapp"></i> SOLICITAR COMBO
+                        </button>
+                    </div>
+                </div>
+
+                <!-- COMBO 3 a COMBO 5 - Estructura similar -->
+                <!-- Agrega los otros 3 combos aquí -->
+            </div>
+            
+            <div class="combo-extra">
+                <div class="extra-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3>¡REGALO SORPRESA EN TODOS LOS COMBOS!</h3>
+                <p>Al pedir cualquier combo, recibirás un regalo especial de cortesía.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLUB VIP - FORMULARIO ELEGANTE -->
+    <section class="club-section" id="contacto">
+        <div class="container">
+            <div class="club-header">
+                <h2><i class="fas fa-crown"></i> ÚNETE AL <span>CLUB VIP</span></h2>
+                <p>Accede a beneficios exclusivos como cliente preferencial</p>
+            </div>
+            
+            <div class="club-container">
+                <div class="club-beneficios">
+                    <h3><i class="fas fa-star"></i> BENEFICIOS EXCLUSIVOS</h3>
+                    
+                    <div class="beneficios-grid">
+                        <div class="beneficio">
+                            <div class="beneficio-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <h4>15% DESCUENTO</h4>
+                            <p>En todas tus compras</p>
+                        </div>
+                        
+                        <div class="beneficio">
+                            <div class="beneficio-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <h4>ENVÍO GRATIS</h4>
+                            <p>En pedidos sobre $300.000</p>
+                        </div>
+                        
+                        <div class="beneficio">
+                            <div class="beneficio-icon">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <h4>REGALOS SORPRESA</h4>
+                            <p>En cada aniversario</p>
+                        </div>
+                        
+                        <div class="beneficio">
+                            <div class="beneficio-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4>ACCESO ANTICIPADO</h4>
+                            <p>A nuevos productos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonio">
+                        <div class="testimonio-texto">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Como miembro VIP recibo ofertas exclusivas y 
+                            asesoría personalizada. ¡Totalmente recomendado!"</p>
+                        </div>
+                        <div class="testimonio-autor">
+                            <strong>Carlos Rodríguez</strong>
+                            <span>Miembro VIP desde 2022</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="club-formulario">
+                    <div class="form-header">
+                        <h3><i class="fas fa-user-plus"></i> REGÍSTRATE GRATIS</h3>
+                        <p>Solo necesitas nombre y teléfono</p>
+                    </div>
+                    
+                    <form id="formularioClubVIP">
+                        <div class="form-group">
+                            <label for="nombreCompleto">
+                                <i class="fas fa-user"></i> Nombre Completo
+                            </label>
+                            <input type="text" id="nombreCompleto" name="nombre" required 
+                                   placeholder="Ej: Ana María López" class="input-icon">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="numeroTelefono">
+                                <i class="fas fa-phone"></i> WhatsApp
+                            </label>
+                            <input type="tel" id="numeroTelefono" name="telefono" required 
+                                   placeholder="Ej: 316 849 3791" class="input-icon">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="intereses">
+                                <i class="fas fa-heart"></i> ¿Qué te interesa?
+                            </label>
+                            <select id="intereses" name="intereses" class="input-icon">
+                                <option value="">Selecciona tu preferencia</option>
+                                <option value="whisky">Whisky & Bourbon</option>
+                                <option value="ron">Ron & Aguardiente</option>
+                                <option value="tequila">Tequila & Mezcal</option>
+                                <option value="vodka">Vodka & Gin</option>
+                                <option value="todos">Todos los licores</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="aceptoWhatsApp" name="whatsapp" checked>
+                            <label for="aceptoWhatsApp">
+                                <i class="fab fa-whatsapp"></i> Acepto recibir promociones por WhatsApp
+                            </label>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="aceptoTerminos" name="terminos" required>
+                            <label for="aceptoTerminos">
+                                <i class="fas fa-file-contract"></i> Acepto términos y condiciones
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-vip">
+                            <i class="fas fa-crown"></i> UNIRME AL CLUB VIP
+                        </button>
+                        
+                        <p class="form-seguridad">
+                            <i class="fas fa-shield-alt"></i> Tus datos están protegidos. No compartiremos tu información.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER PREMIUM -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <h3>
+                        <span class="logo-bodega">BODEGA</span>
+                        <span class="logo-virtual">VIRTUAL</span>
+                    </h3>
+                    <p class="footer-tagline">Elevando el arte del buen beber</p>
+                    
+                    <div class="footer-redes">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="links-column">
+                        <h4><i class="fas fa-shopping-bag"></i> COMPRAR</h4>
+                        <ul>
+                            <li><a href="#productos">Licores Premium</a></li>
+                            <li><a href="#combos">Combos Especiales</a></li>
+                            <li><a href="#">Novedades</a></li>
+                            <li><a href="#">Ofertas</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="links-column">
+                        <h4><i class="fas fa-info-circle"></i> INFORMACIÓN</h4>
+                        <ul>
+                            <li><a href="#">Sobre Nosotros</a></li>
+                            <li><a href="#">Blog de Licores</a></li>
+                            <li><a href="#">Guía de Maridaje</a></li>
+                            <li><a href="#">Preguntas Frecuentes</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="links-column">
+                        <h4><i class="fas fa-headset"></i> SOPORTE</h4>
+                        <ul>
+                            <li><a href="#">Contáctanos</a></li>
+                            <li><a href="#">Envíos & Entregas</a></li>
+                            <li><a href="#">Políticas de Cambio</a></li>
+                            <li><a href="#">Términos & Condiciones</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-contacto">
+                    <h4><i class="fas fa-phone-alt"></i> CONTACTO DIRECTO</h4>
+                    <div class="contacto-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <p>316 849 3791</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contacto-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Horarios</strong>
+                            <p>Lun-Vie: 9am - 8pm</p>
+                            <p>Sáb-Dom: 10am - 6pm</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contacto-item">
+                        <i class="fas fa-shipping-fast"></i>
+                        <div>
+                            <strong>Envíos</strong>
+                            <p>Bogotá: 2-4 horas</p>
+                            <p>Nacional: 24-48 horas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-pagos">
+                    <p>Métodos de pago:</p>
+                    <div class="pagos-icons">
+                        <i class="fab fa-cc-visa" title="Visa"></i>
+                        <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                        <i class="fab fa-cc-amex" title="American Express"></i>
+                        <i class="fas fa-money-bill-wave" title="Efectivo"></i>
+                        <i class="fas fa-university" title="Transferencia"></i>
+                        <i class="fas fa-qrcode" title="QR"></i>
+                    </div>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Bodega Virtual. Todos los derechos reservados.</p>
+                    <p class="legal">Venta exclusiva para mayores de 18 años. Consumir con moderación.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP ANIMADO -->
+    <a href="https://wa.me/573168493791?text=Hola%20Bodega%20Virtual,%20me%20interesan%20sus%20licores%20premium" 
+       class="whatsapp-float" target="_blank" aria-label="Chatear por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="float-text">¿Consultas?</span>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script src="script.js"></script>
+</body>
+</html>

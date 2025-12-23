@@ -1,0 +1,1035 @@
+/* ===========================================
+   RESET Y CONFIGURACIÓN - AMBIENTE LICORES
+   =========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* PALETA ELEGANTE PARA LICORES */
+    --color-vino: #8B0000;
+    --color-dorado: #D4AF37;
+    --color-esmeralda: #2E8B57;
+    --color-negro: #1A1A1A;
+    --color-crema: #FFF8F0;
+    --color-marron: #5D4037;
+    --color-blanco: #FFFFFF;
+    --color-sombra: rgba(139, 0, 0, 0.1);
+    
+    /* Degradados elegantes */
+    --gradiente-vino: linear-gradient(135deg, #8B0000 0%, #5A0000 100%);
+    --gradiente-dorado: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
+    --gradiente-oscuro: linear-gradient(135deg, #1A1A1A 0%, #2D2424 100%);
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.6;
+    color: var(--color-negro);
+    background-color: var(--color-crema);
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 0, 0, 0.05) 0%, transparent 50%);
+    min-height: 100vh;
+}
+
+/* Tipografía elegante */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+p, span, label {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===========================================
+   HEADER ELEGANTE CON EFECTO VINO
+   =========================================== */
+.header {
+    background: var(--gradiente-vino);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(139, 0, 0, 0.3);
+    border-bottom: 3px solid var(--color-dorado);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-texto h1 {
+    color: var(--color-blanco);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+}
+
+.logo-texto h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-dorado);
+    transform: scaleX(0.8);
+}
+
+.tagline {
+    color: var(--color-dorado);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-style: italic;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 2px solid var(--color-dorado);
+    color: var(--color-dorado);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.menu-toggle:hover {
+    background: var(--color-dorado);
+    color: var(--color-vino);
+    transform: rotate(90deg);
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--color-blanco);
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 8px 0;
+    position: relative;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.nav a:hover {
+    color: var(--color-dorado);
+}
+
+.nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-dorado);
+    transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav a:hover::before {
+    width: 100%;
+}
+
+/* ===========================================
+   HERO IMPACTANTE - PORTADA DE LICORES
+   =========================================== */
+.hero {
+    position: relative;
+    padding: 120px 0;
+    background: 
+        linear-gradient(rgba(26, 26, 26, 0.85), rgba(139, 0, 0, 0.85)),
+        url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--color-blanco);
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+.hero-content h2 span {
+    color: var(--color-dorado);
+    font-style: italic;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--gradiente-dorado);
+    color: var(--color-negro);
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* ===========================================
+   TARJETAS DE PRODUCTOS - ELEGANTES
+   =========================================== */
+.productos-section, .combos-section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--color-vino);
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--color-dorado);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--color-marron);
+    margin-bottom: 60px;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.productos-grid, .combos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.producto-card, .combo-card {
+    background: var(--color-blanco);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(139, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.producto-card::before, .combo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--gradiente-dorado);
+    z-index: 1;
+}
+
+.producto-card:hover, .combo-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(139, 0, 0, 0.2);
+    border-color: var(--color-dorado);
+}
+
+.producto-img, .combo-img {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.producto-img::after, .combo-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(to top, rgba(255, 248, 240, 0.3), transparent);
+}
+
+.img-producto, .img-combo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.producto-card:hover .img-producto,
+.combo-card:hover .img-combo {
+    transform: scale(1.1);
+}
+
+.producto-info, .combo-info {
+    padding: 25px;
+}
+
+.producto-nombre, .combo-nombre {
+    color: var(--color-vino);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.producto-descripcion, .combo-descripcion {
+    color: var(--color-marron);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    height: 60px;
+    overflow: hidden;
+}
+
+.producto-precio {
+    color: var(--color-vino);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.producto-precio::before {
+    content: '$';
+    font-size: 1.2rem;
+    color: var(--color-dorado);
+}
+
+.combo-precio {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.precio-antiguo {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 1.1rem;
+}
+
+.precio-nuevo {
+    color: var(--color-esmeralda);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.combo-header {
+    padding: 25px 25px 15px;
+    position: relative;
+}
+
+.combo-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--gradiente-vino);
+    color: var(--color-blanco);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 10px rgba(139, 0, 0, 0.3);
+}
+
+.btn-producto, .btn-combo {
+    width: 100%;
+    background: var(--gradiente-vino);
+    color: var(--color-blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-producto:hover, .btn-combo:hover {
+    background: var(--color-blanco);
+    color: var(--color-vino);
+    border-color: var(--color-vino);
+}
+
+/* ===========================================
+   SECCIÓN COMBOS - ESPECIAL
+   =========================================== */
+.combos-section {
+    background: 
+        linear-gradient(rgba(255, 248, 240, 0.9), rgba(255, 248, 240, 0.9)),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238b0000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.combo-card {
+    border: 2px solid var(--color-dorado);
+}
+
+.combo-card .combo-badge {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ===========================================
+   FORMULARIO ELEGANTE
+   =========================================== */
+.registro-section {
+    padding: 100px 0;
+    background: var(--gradiente-oscuro);
+    color: var(--color-blanco);
+    position: relative;
+}
+
+.registro-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--gradiente-dorado);
+}
+
+.registro-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.registro-info h2 {
+    color: var(--color-dorado);
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+}
+
+.registro-info h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: var(--color-dorado);
+}
+
+.registro-info ul {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.registro-info li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.05rem;
+}
+
+.registro-info i {
+    color: var(--color-dorado);
+    font-size: 1.2rem;
+    min-width: 25px;
+}
+
+.registro-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.registro-form h3 {
+    color: var(--color-dorado);
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--color-dorado);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    font-size: 1rem;
+    color: var(--color-blanco);
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-dorado);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.checkbox-group input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--color-dorado);
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    color: var(--color-blanco);
+}
+
+.btn-registro {
+    width: 100%;
+    background: var(--gradiente-dorado);
+    color: var(--color-negro);
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 18px;
+}
+
+.btn-registro:hover {
+    background: var(--color-blanco);
+    color: var(--color-negro);
+}
+
+.form-nota {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* ===========================================
+   FOOTER ELEGANTE
+   =========================================== */
+.footer {
+    background: var(--gradiente-oscuro);
+    color: var(--color-blanco);
+    padding: 70px 0 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--gradiente-dorado);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-logo h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--color-dorado);
+}
+
+.footer-logo p {
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+}
+
+.footer-contacto h4,
+.footer-redes h4 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--color-dorado);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-contacto h4::after,
+.footer-redes h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--color-dorado);
+}
+
+.footer-contacto p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-contacto i {
+    color: var(--color-esmeralda);
+    font-size: 1.2rem;
+    min-width: 25px;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.redes-sociales a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 50%;
+    color: var(--color-dorado);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.redes-sociales a:hover {
+    background: var(--color-dorado);
+    color: var(--color-negro);
+    transform: translateY(-3px) rotate(5deg);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+.footer-copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===========================================
+   BOTÓN WHATSAPP ANIMADO
+   =========================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: var(--color-blanco);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: all 0.3s;
+    animation: float 3s ease-in-out infinite;
+    border: 3px solid var(--color-blanco);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    border: 2px solid #25D366;
+    animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* ===========================================
+   EFECTOS ESPECIALES
+   =========================================== */
+.efecto-brillo {
+    position: relative;
+    overflow: hidden;
+}
+
+.efecto-brillo::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    transition: left 0.7s;
+}
+
+.efecto-brillo:hover::after {
+    left: 100%;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+@media (max-width: 1024px) {
+    .hero-content h2 {
+        font-size: 2.8rem;
+    }
+    
+    .registro-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px;
+    }
+    
+    .productos-grid,
+    .combos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-wrap: wrap;
+    }
+    
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+    
+    .logo {
+        order: 1;
+        flex: 1;
+    }
+    
+    .nav {
+        order: 3;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+    
+    .nav.active {
+        max-height: 300px;
+        margin-top: 20px;
+    }
+    
+    .nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .hero {
+        padding: 80px 0;
+        background-attachment: scroll;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .productos-grid,
+    .combos-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .productos-section,
+    .combos-section,
+    .registro-section {
+        padding: 70px 0;
+    }
+    
+    .registro-container {
+        padding: 30px 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .footer-contacto h4::after,
+    .footer-redes h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-contacto p {
+        justify-content: center;
+    }
+    
+    .redes-sociales {
+        justify-content: center;
+    }
+    
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        font-size: 1.7rem;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .logo-texto h1 {
+        font-size: 1.6rem;
+    }
+    
+    .hero {
+        padding: 60px 0;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .producto-info,
+    .combo-info {
+        padding: 20px;
+    }
+    
+    .producto-nombre,
+    .combo-nombre {
+        font-size: 1.3rem;
+    }
+    
+    .registro-form {
+        padding: 30px 20px;
+    }
+}
+
+/* ===========================================
+   ANIMACIONES Y TRANSICIONES EXTRA
+   =========================================== */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.producto-card, .combo-card {
+    animation: aparecer 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.producto-card:nth-child(1) { animation-delay: 0.1s; }
+.producto-card:nth-child(2) { animation-delay: 0.2s; }
+.producto-card:nth-child(3) { animation-delay: 0.3s; }
+.producto-card:nth-child(4) { animation-delay: 0.4s; }
+.producto-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Efecto de vidrio para secciones premium */
+.vidrio {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}

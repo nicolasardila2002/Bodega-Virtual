@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodega Virtual - Licorera Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/Logo.png-removebg.png">
+
+     <!-- Favicon simple usando tu imagen JPEG -->
+    <link rel="icon" href="assets/Logo.png.jpeg" type="image/jpeg">
+    
+    <!-- Para compatibilidad con PNG también -->
+    <link rel="icon" type="image/png" href="assets/Logo.png.jpeg">
+    
+    <!-- Para iOS/Apple -->
+    <link rel="apple-touch-icon" href="assets/Logo.png.jpeg">
+</head>
+<body>
+    <!-- Header y navegación -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="assets/Logo.png-removebg.png" alt="Bodega Virtual Logo">
+                <div class="logo-text">Bodega <span>Virtual</span></div>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="#inicio" class="active">Inicio</a></li>
+                    <li><a href="#combos">Combos</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li>
+                        <div class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero" id="inicio">
+        <h1>Los mejores licores al mejor precio</h1>
+        <p>Descubre nuestra amplia selección de bebidas y combos especiales. Envío rápido y seguro a toda la ciudad.</p>
+        <a href="#productos" class="btn">Ver productos</a>
+    </section>
+
+    <!-- Sección de productos individuales -->
+    <section id="productos">
+        <h2 class="section-title">Productos Individuales</h2>
+        <div class="products-container" id="individual-products">
+            <!-- Los productos se cargarán dinámicamente con JavaScript -->
+        </div>
+    </section>
+
+    <!-- Sección de combos -->
+    <section id="combos">
+        <h2 class="section-title">Combos Especiales</h2>
+        <div class="products-container" id="combo-products">
+            <!-- Los combos se cargarán dinámicamente con JavaScript -->
+        </div>
+    </section>
+
+    <!-- Sección de contacto -->
+    <section id="contacto">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-container">
+            <p class="contact-description">¿Tienes alguna pregunta o necesitas asesoría? Contáctanos a través de WhatsApp para recibir atención personalizada y realizar tus pedidos.</p>
+            <a href="https://wa.me/573001234567?text=Hola,%20me%20interesa%20hacer%20un%20pedido" class="btn" target="_blank" id="whatsapp-contact">
+                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+            </a>
+            <div class="contact-info-grid">
+                <div class="contact-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Teléfono</h3>
+                    <p>+57 300 123 4567</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Horarios</h3>
+                    <p>Lunes a Sábado: 9am - 10pm</p>
+                    <p>Domingos y festivos: 10am - 8pm</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Ubicación</h3>
+                    <p>Ciudad Principal</p>
+                    <p>Envíos a toda la ciudad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrito de compras -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Los items del carrito se agregarán dinámicamente -->
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total-price">$0</span>
+        </div>
+        <div class="cart-actions">
+            <button class="btn" id="checkout-btn">Finalizar Compra</button>
+            <button class="btn" id="clear-cart">Vaciar Carrito</button>
+        </div>
+    </div>
+    
+    <!-- Overlay para el carrito -->
+    <div class="overlay"></div>
+
+    <!-- Modal para datos del cliente -->
+    <div class="customer-modal">
+        <h3>¡Antes de finalizar!</h3>
+        <p>Para mejorar tu experiencia y ofrecerte mejores ofertas, por favor ingresa tus datos:</p>
+        <form id="customer-form">
+            <div class="form-group">
+                <label for="customer-name">Nombre completo *</label>
+                <input type="text" id="customer-name" required>
+            </div>
+            <div class="form-group">
+                <label for="customer-phone">Número de teléfono *</label>
+                <input type="tel" id="customer-phone" required>
+            </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn btn-secondary" id="skip-data">Omitir</button>
+                <button type="submit" class="btn">Continuar con WhatsApp</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">Bodega <span>Virtual</span></div>
+                <p>Tu licorera de confianza con los mejores precios y la más amplia variedad de productos.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#combos">Combos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +57 300 123 4567</li>
+                    <li><i class="fas fa-envelope"></i> info@bodegavirtual.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Ciudad Principal</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Bodega Virtual. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+// Código de emergencia para forzar que el carrito esté oculto
+(function() {
+    // Función para detectar y corregir carrito visible accidentalmente
+    function checkAndFixCart() {
+        const cartSidebar = document.querySelector('.cart-sidebar');
+        const overlay = document.querySelector('.overlay');
+        
+        // Si el carrito parece visible pero no debería estarlo
+        if (cartSidebar && !cartSidebar.classList.contains('active')) {
+            // Forzar estilos de ocultamiento
+            cartSidebar.style.right = '-100%';
+            cartSidebar.style.visibility = 'hidden';
+            cartSidebar.style.opacity = '0';
+            cartSidebar.style.zIndex = '-1';
+        }
+        
+        if (overlay && !overlay.classList.contains('active')) {
+            overlay.style.display = 'none';
+            overlay.style.opacity = '0';
+        }
+    }
+    
+    // Ejecutar inmediatamente
+    setTimeout(checkAndFixCart, 100);
+    
+    // Ejecutar periódicamente
+    setInterval(checkAndFixCart, 1000);
+    
+    // Ejecutar al cambiar tamaño
+    window.addEventListener('resize', checkAndFixCart);
+})();
+</script>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
