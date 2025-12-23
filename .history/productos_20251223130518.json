@@ -13,7 +13,7 @@
         "name": "Aguardiente Amarillo + 2 Electrolit",
         "description": "Que no falte tu aguardiente amarillo en tus celebraciones y lleva dos electroli para el dia siguiente.",
         "price": 55000,
-        "image": "/productos/combo-2.jpg",
+        "image": "/productos/combo-2",
         "stock": 32,
         "category": "combo"
     },
